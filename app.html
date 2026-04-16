@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nail Appointment Estimator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff6f7;
+      color: #333333;
+      padding: 30px;
+    }
+
+    .app-box {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #f4b6c2;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      color: #e94f7a;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #f4b6c2;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #f28c8c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e94f7a;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    a {
+      color: #fd6907;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-box">
+    <h1>Nail Appointment Estimator</h1>
+    <p>Choose a service and see the estimated time and price.</p>
+
+    <label for="service">Service</label>
+    <select id="service">
+      <option value="gel">Gel manicure</option>
+      <option value="builder">Builder gel overlay</option>
+      <option value="art">Gel manicure + simple nail art</option>
+    </select>
+
+    <label for="clients">Number of clients</label>
+    <input type="number" id="clients" value="1" min="1">
+
+    <button onclick="estimate()">Estimate</button>
+
+    <div id="result"></div>
+
+    <p><a href="scratch.html">Back to Scratch Page</a></p>
+  </div>
+
+  <script>
+    function estimate() {
+      const service = document.getElementById("service").value;
+      const clients = Number(document.getElementById("clients").value);
+
+      let timePerClient = 0;
+      let pricePerClient = 0;
+
+      if (service === "gel") {
+        timePerClient = 1.0;   // hours
+        pricePerClient = 35;
+      } else if (service === "builder") {
+        timePerClient = 1.5;
+        pricePerClient = 45;
+      } else if (service === "art") {
+        timePerClient = 1.75;
+        pricePerClient = 50;
+      }
+
+      const totalTime = timePerClient * clients;
+      const totalPrice = pricePerClient * clients;
+
+      let message = "Estimated total time: " + totalTime.toFixed(1) + " hours";
+      message += "<br>Estimated total price: $" + totalPrice.toFixed(2);
+
+      document.getElementById("result").innerHTML = message;
+    }
+  </script>
+
+</body>
+</html>

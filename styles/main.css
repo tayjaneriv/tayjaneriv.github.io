@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff6f7;
+  color: #333333;
+}
+
+h1, h2, h3 {
+  color: #e94f7a;
+}
+
+section {
+  border-bottom: 2px solid #f3b116;
+}
+
+footer {
+  margin-top: 30px;
+  background-color: #f28c8c !important;
+}
+
+.navbar {
+  background-color: #f28c8c !important;
+}
+
+.navbar-brand,
+.nav-link,
+footer p {
+  color: white !important;
+}
+
+header {
+  background-color: #fff0f3 !important;
+}
+
+a {
+  color: #fd6907;
+}
+
+a:hover {
+  color: #e94f7a;
+}

@@ -1,0 +1,30 @@
+body {
+  background-color: #fff6f7;
+  font-family: Arial, sans-serif;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+.top {
+  background-color: #f7a3a3;  /* softer than before */
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+.section {
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #f4b6c2;  /* thinner and lighter */
+  border-radius: 8px;
+}
+
+h1, h2 {
+  color: #e94f7a;
+}
+
+a {
+  color: #fd6907;
+}
